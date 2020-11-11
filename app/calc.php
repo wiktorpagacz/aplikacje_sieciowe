@@ -47,7 +47,7 @@ function process(&$amount, &$years, &$interest, &$result){
     $years = intval($years);
     $interest = floatval($interest);
 
-    $result = ($amount / ($years * 12)) * $interest;
+    $result = ($amount / ($years * 12)) * ($interest * 0.01);
     $result = round($result,2);
 }
 
