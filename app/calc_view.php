@@ -22,7 +22,7 @@ include _ROOT_PATH.'/app/security/check.php';
         <fieldset>
             <label for="amount">Kwota kredytu: </label>
             <input id="amount" class="uk-input" type="text" name="amount" value="<?php out($amount); ?>" /><br />
-            <label for="years">Czas spłaty w latach: </label>
+            <label for="years">Okres spłaty w latach: </label>
             <input id="years" class="uk-input" type="text" name="years" value="<?php out($years); ?>" /><br />
             <label for="interest">Oprocentowanie: </label>
             <input id="interest" class="uk-input" type="text" name="interest" value="<?php out($interest); ?>" /><br />
