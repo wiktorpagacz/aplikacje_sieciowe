@@ -1,6 +1,3 @@
-<?php
-include _ROOT_PATH.'/app/security/check.php';
-?>
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 <head>

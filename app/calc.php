@@ -3,13 +3,11 @@ require_once dirname(__FILE__).'/../config.php';
 
 include _ROOT_PATH.'/app/security/check.php';
 
-//Pobranie parametrów
 function getParams(&$amount, &$years, &$interest){
     $amount = isset($_REQUEST['amount']) ? $_REQUEST['amount'] : null;
     $years = isset($_REQUEST['years']) ? $_REQUEST['years'] : null;
     $interest = isset($_REQUEST['interest']) ? $_REQUEST['interest'] : null;
 }
-// 2. walidacja parametrów z przygotowaniem zmiennych dla widoku
 
 function validate(&$amount, &$years, &$interest, &$messages){
     if(!(isset($amount) && isset($years) && isset($messages))){
