@@ -1,5 +1,7 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
 
 /*
 	Alpha by HTML5 UP
@@ -34,6 +36,28 @@
 	footer, header, hgroup, menu, nav, section {
 		display: block;
 	}
+
+.isa_info, .isa_success, .isa_warning, .isa_error {
+	margin: 10px 0px;
+	padding:12px;
+
+}
+.isa_info {
+	color: #00529B;
+	background-color: #BDE5F8;
+}
+.isa_success {
+	color: #4F8A10;
+	background-color: #DFF2BF;
+}
+.isa_warning {
+	color: #9F6000;
+	background-color: #FEEFB3;
+}
+.isa_error {
+	color: #D8000C;
+	background-color: #FFD2D2;
+}
 
 	body {
 		line-height: 1;
@@ -3894,5 +3918,6 @@
 			#cta {
 				padding: 2.5em 1em 3em 1em;
 			}
+
 
 	}
