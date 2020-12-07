@@ -1,8 +1,8 @@
 <?php
 require_once $conf->root_path.'/lib/smarty/Smarty.class.php';
 require_once $conf->root_path.'/lib/Messages.class.php';
-require_once $conf->root_path.'/app/CalcForm.class.php';
-require_once $conf->root_path.'/app/CalcResult.class.php';
+require_once $conf->root_path.'/app/creditcalc/CalcForm.class.php';
+require_once $conf->root_path.'/app/creditcalc/CalcResult.class.php';
 
 class CalcCtrl {
 
@@ -64,7 +64,7 @@ class CalcCtrl {
             $this->form->interest = floatval($this->form->interest);
             $this->messages->addInfo('Parametry poprawne');
 
-            $this->result->result = ($this->form->amount / ($this->form->years * 12)) * ($this->form->interest * 0.01);
+            $this->result->result = ($this->form->amount / ($this->form->years * 12)) *  ($this->form->interest * 0.1);
             $this->result->result = round($this->result->result, 2);
 
             $this->messages->addInfo('Wykonano obliczenia.');
@@ -89,6 +89,6 @@ class CalcCtrl {
         $smarty->assign('messages', $this->messages);
         $smarty->assign('result', $this->result);
 
-        $smarty->display($conf->root_path.'/app/CalcView.tpl');
+        $smarty->display($conf->root_path.'/app/creditcalc/CalcView.tpl');
         }
 }

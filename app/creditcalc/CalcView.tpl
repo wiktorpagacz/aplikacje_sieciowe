@@ -1,8 +1,8 @@
-{extends file="../templates/main.tpl"}
+{extends file=$conf->root_path|cat:"/templates/main.tpl"}
 
 {block name="content"}
 
-    <form method="post" action="{$conf->app_url}/app/calc.php">
+    <form method="post" action="{$conf->action_root}credCalcCompute">
         <div class="row gtr-50 gtr-uniform">
             <div class="col-6 col-12-mobilep">
                 <input type="text" name="amount" id="amount" value="{$form->amount}" placeholder="Kwota kredytu" />
