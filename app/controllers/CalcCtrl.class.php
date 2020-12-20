@@ -1,7 +1,9 @@
 <?php
 
-require_once 'CalcForm.class.php';
-require_once 'CalcResult.class.php';
+namespace app\controllers;
+
+use app\forms\CalcForm;
+use app\transfer\CalcResult;
 
 class CalcCtrl {
 
