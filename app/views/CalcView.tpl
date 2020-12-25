@@ -2,6 +2,17 @@
 
 {block name="content"}
 
+    <!-- Header -->
+    <header id="header" class="alt">
+        <h1>KALKULATOR KREDYTOWY</h1>
+        <nav id="nav">
+            <ul>
+                <li>Użytkownik: {$user->login}, Rola: {$user->role}</li>
+                <li><a href="{$conf->action_url}logout">Wyloguj</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <form method="post" action="{$conf->action_root}credCalcCompute">
         <div class="row gtr-50 gtr-uniform">
             <div class="col-6 col-12-mobilep">
@@ -20,28 +31,8 @@
             </div>
         </div>
     </form>
-<div class="messages">
-    {if $messages->isError()}
-        <h4>Wystąpiły błędy: </h4>
-            <ol class="isa_error">
-            {foreach $messages->getErrors() as $err}
-                {strip}
-                <li>{$err}</li>
-                {/strip}
-            {/foreach}
-            </ol>
-    {/if}
 
-    {if $messages->isInfo()}
-        <h4>Informacje: </h4>
-        <ol class="isa_info">
-            {foreach $messages->getInfos() as $inf}
-                {strip}
-                    <li>{$inf}</li>
-                {/strip}
-            {/foreach}
-        </ol>
-    {/if}
+    {include file='messages.tpl'}
 
     {if isset($result->result)}
         <h4>Wynik: </h4>
@@ -49,5 +40,5 @@
             {$result->result}
         </p>
     {/if}
-</div>
+
 {/block}

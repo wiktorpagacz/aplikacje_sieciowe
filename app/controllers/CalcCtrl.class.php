@@ -75,10 +75,11 @@ class CalcCtrl {
 
     public function generateView(){
 
+        global $user;
+
+        getSmarty()->assign('user',$user);
+
         getSmarty()->assign('page_title', 'Kalkulator kredytowy.');
-        getSmarty()->assign('page_header', 'Prosty kalkulator kredytowy <br />wyliczajacy rate kredytu.');
-        getSmarty()->assign('page_description', 'Uzupełnij pola formularza i naciśnij przycisk "Oblicz" by obliczyć<br />'.
-            'miesięczną ratę kredytu.');
 
         getSmarty()->assign('form', $this->form);
         getSmarty()->assign('result', $this->result);

@@ -15,15 +15,7 @@
 <body class="landing is-preload">
 <div id="page-wrapper">
 
-    <!-- Header -->
-    <header id="header" class="alt">
-        <h1>KALKULATOR</h1>
-        <nav id="nav">
-            <ul>
-                <li><a href="index.php">Home</a></li>
-            </ul>
-        </nav>
-    </header>
+
 
     <!-- Banner -->
     <section id="banner">
@@ -35,10 +27,7 @@
 
 
         <section class="box special">
-            <header class="major">
-                <h2>{$page_header|default:"Opis strony bez kalkulatora"}</h2>
-                <p>{$page_description|default:"Opis strony"}</p>
-            </header>
+
 
             {block name=content} Domyślna treść zawartości .... {/block}
 
