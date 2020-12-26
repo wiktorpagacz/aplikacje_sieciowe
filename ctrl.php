@@ -1,15 +1,12 @@
 <?php
 require_once 'init.php';
 
-getConf()->login_action = 'login';
+getRouter()->setDefaultRoute('calcShow');
+getRouter()->setLoginRoute('login');
 
-switch ($action) {
-    default : //calcView
-        control('app\\controllers', 'CalcCtrl', 'generateView', ['user', 'admin']);
-    case 'login' :
-        control('app\\controllers', 'LoginCtrl', 'doLogin');
-    case 'credCalcCompute' :
-        control('', 'CalcCtrl', 'process', ['user', 'admin']);
-    case 'logout' :
-        control('app\\controllers', 'LoginCtrl', 'doLogout', ['user', 'admin']);
-}
+getRouter()->addRoute('calcShow', 'CalcCtrl',  ['user','admin']);
+getRouter()->addRoute('credCalcCompute', 'CalcCtrl',  ['user','admin']);
+getRouter()->addRoute('login', 'LoginCtrl');
+getRouter()->addRoute('logout', 'LoginCtrl', ['user','admin']);
+
+getRouter()->go();

@@ -54,7 +54,7 @@ class CalcCtrl {
     }
 
 
-    public function process(){
+    public function action_credCalcCompute(){
         $this->getParams();
 
         if ($this->validate()) {
@@ -73,9 +73,12 @@ class CalcCtrl {
 
     }
 
-    public function generateView(){
+    public function action_calcShow(){
+        getMessages()->addInfo('Witaj w kalkulatorze');
+        $this->generateView();
+    }
 
-        global $user;
+    public function generateView(){
 
         getSmarty()->assign('user', unserialize($_SESSION['user']));
 
@@ -85,5 +88,5 @@ class CalcCtrl {
         getSmarty()->assign('result', $this->result);
 
         getSmarty()->display('CalcView.tpl');
-        }
+    }
 }

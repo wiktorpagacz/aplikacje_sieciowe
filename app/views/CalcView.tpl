@@ -13,7 +13,7 @@
         </nav>
     </header>
 
-    <form method="post" action="{$conf->action_root}credCalcCompute">
+    <form method="post" action="{$conf->action_url}credCalcCompute">
         <div class="row gtr-50 gtr-uniform">
             <div class="col-6 col-12-mobilep">
                 <input type="text" name="amount" id="amount" value="{$form->amount}" placeholder="Kwota kredytu" />

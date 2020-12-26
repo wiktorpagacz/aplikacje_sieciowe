@@ -30,17 +30,13 @@ class LoginCtrl{
         if ( !getMessages()->isError() ) {
 
             if ($this->form->login == "admin" && $this->form->pass == "admin") {
-                if (session_status() == PHP_SESSION_NONE) {
-                    session_start();
-                }
+
                 $user = new User($this->form->login, 'admin');
                 $_SESSION['user'] = serialize($user);
                 addRole($user->role);
 
             } else if ($this->form->login == "user" && $this->form->pass == "user") {
-                if (session_status() == PHP_SESSION_NONE) {
-                    session_start();
-                }
+
                 $user = new User($this->form->login, 'user');
                 $_SESSION['user'] = serialize($user);
                 addRole($user->role);
@@ -53,7 +49,7 @@ class LoginCtrl{
         return ! getMessages()->isError();
     }
 
-    public function doLogin(){
+    public function action_login(){
 
         $this->getParams();
 
@@ -66,7 +62,7 @@ class LoginCtrl{
         }
     }
 
-    public function doLogout(){
+    public function action_logout(){
         // 1. zakończenie sesji
         session_destroy();
 
