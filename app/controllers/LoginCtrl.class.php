@@ -19,7 +19,7 @@ class LoginCtrl{
 
     public function validate() {
         if (! (isset( $this->form->login) && isset($this->form->pass))) {
-            getMessages()->addError('Błędne wywołanie aplikacji');
+            return false;
         }
 
         if (! getMessages()->isError()) {
@@ -34,15 +34,17 @@ class LoginCtrl{
                     session_start();
                 }
                 $user = new User($this->form->login, 'admin');
-
                 $_SESSION['user'] = serialize($user);
+                addRole($user->role);
+
             } else if ($this->form->login == "user" && $this->form->pass == "user") {
                 if (session_status() == PHP_SESSION_NONE) {
                     session_start();
                 }
                 $user = new User($this->form->login, 'user');
-                // zapis wartości do sesji
                 $_SESSION['user'] = serialize($user);
+                addRole($user->role);
+
             } else {
                 getMessages()->addError('Niepoprawny login lub hasło');
             }
@@ -66,9 +68,6 @@ class LoginCtrl{
 
     public function doLogout(){
         // 1. zakończenie sesji
-        if (session_status() == PHP_SESSION_NONE) {
-            session_start();
-        }
         session_destroy();
 
         // 2. wyświetl stronę logowania z informacją

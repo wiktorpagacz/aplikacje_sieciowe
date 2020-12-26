@@ -1,24 +1,15 @@
 <?php
 require_once 'init.php';
 
+getConf()->login_action = 'login';
+
 switch ($action) {
     default : //calcView
-        include 'check.php';
-        $ctrl = new app\controllers\CalcCtrl();
-        $ctrl->generateView();
-    break;
+        control('app\\controllers', 'CalcCtrl', 'generateView', ['user', 'admin']);
     case 'login' :
-        $ctrl = new app\controllers\LoginCtrl();
-        $ctrl->doLogin();
-    break;
+        control('app\\controllers', 'LoginCtrl', 'doLogin');
     case 'credCalcCompute' :
-        include 'check.php';
-        $ctrl = new app\controllers\CalcCtrl();
-        $ctrl->process();
-    break;
+        control('', 'CalcCtrl', 'process', ['user', 'admin']);
     case 'logout' :
-        include 'check.php';
-        $ctrl = new app\controllers\LoginCtrl();
-        $ctrl->doLogout();
-    break;
+        control('app\\controllers', 'LoginCtrl', 'doLogout', ['user', 'admin']);
 }

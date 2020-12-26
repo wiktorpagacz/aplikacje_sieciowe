@@ -77,7 +77,7 @@ class CalcCtrl {
 
         global $user;
 
-        getSmarty()->assign('user',$user);
+        getSmarty()->assign('user', unserialize($_SESSION['user']));
 
         getSmarty()->assign('page_title', 'Kalkulator kredytowy.');
 
