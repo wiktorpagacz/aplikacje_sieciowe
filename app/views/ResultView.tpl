@@ -38,9 +38,6 @@
         </tr>
         {/foreach}
     </tbody>
-{*        <p class="isa_success">*}
-{*            {$result->result}*}
-{*        </p>*}
     </table>
 
     {include file='messages.tpl'}
