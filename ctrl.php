@@ -9,4 +9,6 @@ getRouter()->addRoute('credCalcCompute', 'CalcCtrl',  ['user','admin']);
 getRouter()->addRoute('login', 'LoginCtrl');
 getRouter()->addRoute('logout', 'LoginCtrl', ['user','admin']);
 
+getRouter()->addRoute('results', 'ResultCtrl', ['user', 'admin']);
+
 getRouter()->go();

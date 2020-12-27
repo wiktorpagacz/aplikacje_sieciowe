@@ -9,6 +9,7 @@
             <ul>
                 <li>Użytkownik: {$user->login}, Rola: {$user->role}</li>
                 <li><a href="{$conf->action_url}logout">Wyloguj</a></li>
+                <li><a href="{$conf->action_url}results">Wyniki</a></li>
             </ul>
         </nav>
     </header>
