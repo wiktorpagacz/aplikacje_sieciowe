@@ -15,10 +15,10 @@
     </header>
 
     <h4>Wynik: </h4>
+    <div class="table-wrapper">
     <table>
         <thead>
         <tr>
-            <th>ID</th>
             <th>Kwota</th>
             <th>Ilość lat</th>
             <th>Oprocentowanie</th>
@@ -29,7 +29,6 @@
     <tbody>
         {foreach $records as $data}
         <tr>
-        <td>{$data["idwynik"]}</td>
         <td>{$data["kwota"]}</td>
         <td>{$data["lat"]}</td>
         <td>{$data["procent"]}</td>
@@ -39,6 +38,7 @@
         {/foreach}
     </tbody>
     </table>
+    </div>
 
     {include file='messages.tpl'}
 

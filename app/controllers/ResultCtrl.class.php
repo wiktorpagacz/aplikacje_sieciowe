@@ -24,15 +24,13 @@ class ResultCtrl {
                 ]
             ]);
 
-           $datas = $database->select("wynik", "*"
-//                ["idwynik",
-//                "kwota",
-//                "lat",
-//                "procent",
-//                "rata",
-//                "data"
-//            ]);
-            );
+           $datas = $database->select("wynik", [
+                "kwota",
+                "lat",
+                "procent",
+                "rata",
+                "data"
+            ]);
 
             $this->result=$datas;
 
